@@ -29,10 +29,10 @@ class SlackLogEngine extends BaseLog
      * @var array
      */
     protected $_defaultConfig = [
-        'types' => null,
-        'levels' => [],
-        'scopes' => [],
-	    'clientClass' => '\Maknz\Slack\Client'
+        'types'       => null,
+        'levels'      => [],
+        'scopes'      => [],
+        'clientClass' => '\Maknz\Slack\Client',
     ];
 
     /**
@@ -62,7 +62,7 @@ class SlackLogEngine extends BaseLog
         if (isset($config['client'])) {
             $this->_SlackClient = $config['client'];
             unset($config['client']);
-        } elseif (isset($config['hookUrl'])) {
+        } else if (isset($config['hookUrl'])) {
             $hookUrl = $config['hookUrl'];
             $className = $config['clientClass'];
             unset($config['hookUrl'], $config['clientClass']);
@@ -86,6 +86,7 @@ class SlackLogEngine extends BaseLog
      * Set slack client
      *
      * @param \Maknz\Slack\Client $client slack client
+     *
      * @return \Maknz\Slack\Client slack client
      */
     public function setClient(SlackClient $client)
@@ -103,7 +104,9 @@ class SlackLogEngine extends BaseLog
      *    See Cake\Log\Log::$_levels for list of possible levels.
      * @param string $message The message you want to log.
      * @param array $context Additional information about the logged message
+     *
      * @return bool success
+     * @throws \Exception
      */
     public function log($level, $message, array $context = [])
     {
@@ -121,6 +124,7 @@ class SlackLogEngine extends BaseLog
             if (Configure::read('debug')) {
                 throw $e;
             }
+
             // otherwise DO nothing
             return false;
         }

@@ -1,9 +1,3 @@
-[![Build Status](https://img.shields.io/travis/hiromi2424/cakephp-slack-log-engine/master.svg?style=flat-square)](https://travis-ci.org/hiromi2424/cakephp-slack-log-engine)
-[![Coverage Status](https://img.shields.io/codecov/c/github/hiromi2424/cakephp-slack-log-engine.svg?style=flat-square)](https://codecov.io/github/hiromi2424/cakephp-slack-log-engine)
-[![Total Downloads](https://img.shields.io/packagist/dt/hiromi2424/cakephp-slack-log-engine.svg?style=flat-square)](https://packagist.org/packages/hiromi2424/cakephp-slack-log-engine)
-[![Latest Stable Version](https://img.shields.io/packagist/v/hiromi2424/cakephp-slack-log-engine.svg?style=flat-square)](https://packagist.org/packages/hiromi2424/cakephp-slack-log-engine)
-[![Scrutinizer](https://img.shields.io/scrutinizer/g/hiromi2424/cakephp-slack-log-engine.svg)](https://scrutinizer-ci.com/g/hiromi2424/cakephp-slack-log-engine/)
-
 ## What is this?
 
 This is CakePHP plugin to provide a log engine that post to slack using incoming webhooks.
@@ -15,13 +9,13 @@ The engine uses [Slack for PHP](https://github.com/maknz/slack) and is just thin
 ## Installation
 
 ```
-composer require hiromi2424/cakephp-slack-log-engine
+composer require jeffersonsimaogoncalves/cakephp-slack-log-engine
 ```
 
 ## Requirements
 
+* PHP 7
 * CakePHP 3.x
-* PHP 5.5+
 
 ## Usage
 
@@ -48,3 +42,6 @@ Either `client` or `hookUrl` is required.
 - `clientClass` [string(optional)] slack client class. This option is used only with `hookUrl` option.
 
 Other available settings can be seen at [Slack for PHP Official Docs](https://github.com/maknz/slack#settings)
+## Credits
+
+This work is based on the [code by Hiroki Shimizu](https://github.com/hiromi2424/cakephp-slack-log-engine).

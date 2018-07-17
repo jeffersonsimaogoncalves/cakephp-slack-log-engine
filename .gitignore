@@ -1,5 +1,8 @@
 *.pyc
 phpunit.xml
-vendor/
-composer.lock
-tmp
+/vendor/*
+/config/app.php
+/tmp/*
+/logs/*
+/.idea/*
+/composer.lock
